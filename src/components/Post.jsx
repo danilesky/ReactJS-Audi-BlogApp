@@ -5,20 +5,43 @@ import { AiFillStar } from "react-icons/ai";
 import Title from "./typography/Title";
 
 const PostWrapper = styled.div`
-  margin-bottom: 45px;
   background: #0000009e;
+  margin-bottom: 45px;
   border-radius: 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
   gap: 5px;
+  transition: 1s ease;
+  cursor: pointer;
+  &:hover {
+    img {
+      transform: scale(1.1);
+      transition: 0.5s ease;
+    }
+  }
+`;
+const PostImgWrap = styled.div`
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
 `;
 const PostImg = styled.img`
   width: 100%;
   height: 200px;
   object-fit: cover;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  transition: 0.5s ease;
 `;
 const Content = styled.div`
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -52,7 +75,9 @@ const Post = ({ post }) => {
   };
   return (
     <PostWrapper>
-      <PostImg src={post.image} alt="" />
+      <PostImgWrap>
+        <PostImg src={post.image} alt="" />
+      </PostImgWrap>
       <Content>
         <Title color={"white"} size={"L"}>
           {post.title}

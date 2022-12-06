@@ -1,4 +1,4 @@
 export const createDesc = (text) => {
-  const description = text.split(" ").slice(0, 15).join(" ") + "...";
+  const description = text.split(" ").slice(0, 30).join(" ") + "...";
   return description;
 };
