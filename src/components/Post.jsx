@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { createDesc } from "../functions/createDesc";
 import { AiFillStar } from "react-icons/ai";
+import Title from "./typography/Title";
 
 const PostWrapper = styled.div`
   margin-bottom: 45px;
@@ -46,7 +47,9 @@ const Post = ({ post }) => {
   return (
     <PostWrapper>
       <PostImg src={post.image} alt="" />
-      <h3>{post.title}</h3>
+      <Title color={"cyan"} size={"L"}>
+        {post.title}
+      </Title>
       <p>{description}</p>
       <button>Read more</button>
       <StarIcon onClick={selectedHandler} isActive={selected} />
