@@ -6,7 +6,7 @@ import Title from "./typography/Title";
 
 const PostWrapper = styled.div`
   margin-bottom: 45px;
-  background: #00000013;
+  background: #0000009e;
   border-radius: 0px;
   display: flex;
   flex-direction: column;
@@ -15,6 +15,8 @@ const PostWrapper = styled.div`
 `;
 const PostImg = styled.img`
   width: 100%;
+  height: 200px;
+  object-fit: cover;
 `;
 const Content = styled.div`
   padding: 20px;
@@ -52,7 +54,7 @@ const Post = ({ post }) => {
     <PostWrapper>
       <PostImg src={post.image} alt="" />
       <Content>
-        <Title color={"black"} size={"L"}>
+        <Title color={"white"} size={"L"}>
           {post.title}
         </Title>
         <p>{description}</p>

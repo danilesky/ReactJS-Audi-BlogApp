@@ -18,7 +18,7 @@ const sizing = (size) => {
 const Title = styled.h1`
   font-size: 40px;
   line-height: 50px;
-  color: black;
+  color: white;
   margin: 0;
   letter-spacing: -0.04em;
   font-weight: 700;

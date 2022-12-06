@@ -6,9 +6,6 @@ import Title from "./components/typography/Title";
 function App() {
   return (
     <div className="App">
-      <Title color="white" size={"L"}>
-        This is my blogApp
-      </Title>
       <PostList />
     </div>
   );
