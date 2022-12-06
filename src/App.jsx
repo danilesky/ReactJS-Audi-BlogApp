@@ -1,19 +1,13 @@
-import { useEffect, useState } from "react";
+import React from "react";
 import "./App.css";
-import { fetchPosts } from "./services/posts.service";
+import PostList from "./components/PostList";
 
 function App() {
-  const [posts, setPosts] = useState([]);
-  useEffect(() => {
-    const asyncFn = async () => {
-      const data = await fetchPosts("someUrl.com");
-      if (data) {
-        setPosts(data.list);
-      }
-    };
-    asyncFn();
-  }, []);
-  return <div className="App">Hello App</div>;
+  return (
+    <div className="App">
+      <PostList />
+    </div>
+  );
 }
 
 export default App;
