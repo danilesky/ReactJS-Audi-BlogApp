@@ -6,17 +6,21 @@ import Title from "./typography/Title";
 
 const PostWrapper = styled.div`
   margin-bottom: 45px;
-  background: #00000031;
-  padding: 20px;
-  border-radius: 10px;
+  background: #00000013;
+  border-radius: 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 15px;
+  gap: 5px;
 `;
 const PostImg = styled.img`
   width: 100%;
+`;
+const Content = styled.div`
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `;
 
 const StarIcon = styled(AiFillStar)`
@@ -47,12 +51,14 @@ const Post = ({ post }) => {
   return (
     <PostWrapper>
       <PostImg src={post.image} alt="" />
-      <Title color={"cyan"} size={"L"}>
-        {post.title}
-      </Title>
-      <p>{description}</p>
-      <button>Read more</button>
-      <StarIcon onClick={selectedHandler} isActive={selected} />
+      <Content>
+        <Title color={"black"} size={"L"}>
+          {post.title}
+        </Title>
+        <p>{description}</p>
+        <button>Read more</button>
+        <StarIcon onClick={selectedHandler} isActive={selected} />
+      </Content>
     </PostWrapper>
   );
 };
