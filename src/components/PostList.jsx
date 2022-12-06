@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { fetchPosts } from "../services/posts.service";
 import Post from "./Post";
+import Spinner from "react-bootstrap/Spinner";
 
 const List = styled.div`
   max-width: 500px;
@@ -10,6 +11,7 @@ const List = styled.div`
 `;
 const PostList = () => {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     //Async fetch posts
     const asyncFn = async () => {
@@ -17,16 +19,24 @@ const PostList = () => {
       if (data) {
         //save data to posts
         setPosts(data.list);
+        setLoading(false);
       }
     };
     asyncFn();
   }, []);
   return (
-    <List>
-      {posts.map((post) => (
-        <Post post={post} />
-      ))}
-    </List>
+    <>
+      {loading && (
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      )}
+      <List>
+        {posts.map((post) => (
+          <Post post={post} />
+        ))}
+      </List>
+    </>
   );
 };
 
