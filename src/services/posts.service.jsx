@@ -10,7 +10,3 @@ export const fetchPosts = (url) => {
     }, 500);
   });
 };
-
-export const getPosts = () => {
-  return fetchPosts.then((data) => data);
-};
