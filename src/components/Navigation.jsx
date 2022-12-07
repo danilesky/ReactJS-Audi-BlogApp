@@ -31,13 +31,13 @@ const NavLogo = styled.img`
   stroke: white;
   height: 40px;
 `;
-const Navigation = ({ setRoute }) => {
+const Navigation = () => {
   return (
     <NavWrapper>
       <NavList>
-        <NavLink onClick={() => setRoute("HOME")}>Home</NavLink>
+        <NavLink>Home</NavLink>
         <NavLogo src={logo} />
-        <NavLink onClick={() => setRoute("BLOG")}>Blog</NavLink>
+        <NavLink>Blog</NavLink>
       </NavList>
     </NavWrapper>
   );
