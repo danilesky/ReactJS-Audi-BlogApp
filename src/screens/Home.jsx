@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import Title from "../components/typography/Title";
 
 const Home = () => {
@@ -10,7 +11,9 @@ const Home = () => {
       <Title size={"S"} weight={400} marginBottom={"10px"}>
         Read our articles
       </Title>
-      <button>Visit Blog</button>
+      <NavLink to="/blog">
+        <button>Visit Blog</button>
+      </NavLink>
     </>
   );
 };
