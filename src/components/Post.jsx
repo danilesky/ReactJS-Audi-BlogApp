@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { createDesc } from "../functions/createDesc";
 import { AiFillStar } from "react-icons/ai";
 import Title from "./typography/Title";
+import { NavLink } from "react-router-dom";
 
 const PostWrapper = styled.div`
   background: #0000009e;
@@ -83,7 +84,9 @@ const Post = ({ post }) => {
           {post.title}
         </Title>
         <p>{description}</p>
-        <button>Read more</button>
+        <NavLink to={`/blog/${post.id}`}>
+          <button>Read more</button>
+        </NavLink>
         <StarIcon onClick={selectedHandler} isActive={selected} />
       </Content>
     </PostWrapper>

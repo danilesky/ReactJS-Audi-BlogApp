@@ -1,10 +1,10 @@
 import React from "react";
 import PostList from "../components/PostList";
 
-const Blog = () => {
+const Blog = ({ posts, loading }) => {
   return (
     <div>
-      <PostList />
+      <PostList loading={loading} posts={posts} />
     </div>
   );
 };
