@@ -32,6 +32,21 @@ const Title = styled.h1`
       return sizing(props.size);
     }
   }};
+  font-weight: ${(props) => {
+    if (props.weight) {
+      return props.weight;
+    }
+  }};
+  line-height: ${(props) => {
+    if (props.line) {
+      return props.line;
+    }
+  }};
+  margin-bottom: ${(props) => {
+    if (props.marginBottom) {
+      return props.marginBottom;
+    }
+  }};
 `;
 
 export default Title;
