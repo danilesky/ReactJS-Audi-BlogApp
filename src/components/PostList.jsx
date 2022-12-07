@@ -8,7 +8,6 @@ const List = styled.div`
   max-width: 500px;
   width: 100%;
   margin: auto;
-  padding-top: 110px;
 `;
 const PostList = () => {
   const [posts, setPosts] = useState([]);
