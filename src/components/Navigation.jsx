@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../assets/logo.svg";
 
@@ -35,9 +36,15 @@ const Navigation = () => {
   return (
     <NavWrapper>
       <NavList>
-        <NavLink>Home</NavLink>
-        <NavLogo src={logo} />
-        <NavLink>Blog</NavLink>
+        <Link to="/">
+          <NavLink>Home</NavLink>
+        </Link>
+        <Link to="/">
+          <NavLogo src={logo} />
+        </Link>
+        <Link to="/blog">
+          <NavLink>Blog</NavLink>
+        </Link>
       </NavList>
     </NavWrapper>
   );
