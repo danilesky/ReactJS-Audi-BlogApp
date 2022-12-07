@@ -13,10 +13,14 @@ const AppWrap = styled.div`
 
 function App() {
   const [screen, setScreen] = useState("HOME");
+
+  const screenHandler = (route) => {
+    setScreen(route);
+  };
   return (
     <AppWrap>
       <div className="App">
-        <Navigation />
+        <Navigation setRoute={screenHandler} />
         {screen === "HOME" && <Home />}
         {screen === "BLOG" && <Blog />}
       </div>
