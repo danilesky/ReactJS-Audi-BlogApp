@@ -23,9 +23,12 @@ const NavList = styled.div`
   justify-content: center;
 `;
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   cursor: pointer;
   color: white;
+  &.active {
+    color: #7371ef;
+  }
 `;
 
 const NavLogo = styled.img`
@@ -36,15 +39,15 @@ const Navigation = () => {
   return (
     <NavWrapper>
       <NavList>
-        <Link to="/">
-          <NavLink>Home</NavLink>
-        </Link>
-        <Link to="/">
+        <NavLink to="/" activeclassname={"active"}>
+          Home
+        </NavLink>
+        <NavLink to="/">
           <NavLogo src={logo} />
-        </Link>
-        <Link to="/blog">
-          <NavLink>Blog</NavLink>
-        </Link>
+        </NavLink>
+        <NavLink to="/blog" activeclassname={"active"}>
+          Blog
+        </NavLink>
       </NavList>
     </NavWrapper>
   );
